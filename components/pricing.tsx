@@ -29,7 +29,7 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="px-6 py-20 bg-gray-900 text-white">
+    <section id="pricing" className="px-6 py-40 text-white min-h-screen">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Planos Simples e Transparentes</h2>
@@ -38,9 +38,9 @@ export function Pricing() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {plans.map((plan) => (
-            <Card key={plan.name} className={`relative bg-black border-gray-700 text-white ${plan.popular ? 'border-2 border-white shadow-2xl' : ''}`}>
+            <Card key={plan.name} className={`relative grid grid-rows-3 h-96 bg-gradient-to-tl from-gray-900/40 to-transparent border border-gray-800/40 hover:scale-105 transition-transform`}>
               {plan.popular && (
-                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-white text-black">
+                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-orange-500/50 border-orange-500 text-white">
                   Mais Popular
                 </Badge>
               )}
@@ -56,15 +56,15 @@ export function Pricing() {
                 <ul className="space-y-3">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-center">
-                      <Check className="h-4 w-4 text-white mr-2" />
+                      <Check className="h-4 w-4 text-primary mr-2" />
                       <span className="text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="pt-10">
                 <Button 
-                  className={`w-full ${plan.popular ? 'bg-white text-black hover:bg-gray-200' : 'bg-white text-black hover:bg-gray-200'}`}
+                  className="w-full"
                 >
                   {plan.name === "Enterprise" ? "Falar com Vendas" : "Começar Grátis"}
                 </Button>

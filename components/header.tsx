@@ -7,10 +7,10 @@ import Link from "next/link";
 
 export function Header() {
   return (
-    <header className="w-7xl px-6 py-4 bg-black/80 backdrop-blur-md mt-3 rounded-full text-white fixed left-1/2 transform -translate-x-1/2 top-0 z-50">
+    <header className="w-[95%] px-6 py-4 bg-black/30 backdrop-blur-md mt-3 rounded-full text-white fixed left-1/2 transform -translate-x-1/2 top-0 z-50 border border-zinc-900/80">
       <nav className="flex justify-between items-center w-full">
         <div className="text-2xl font-bold text-white">Huntly</div>
-        <div className="">
+        <div className="md:flex hidden space-x-8">
           <a href="#features" className="hover:text-gray-300 text-white transition-colors font-medium">Recursos</a>
           <a href="#pricing" className="hover:text-gray-300 text-white transition-colors font-medium">Preços</a>
           <a href="#faq" className="hover:text-gray-300 text-white transition-colors font-medium">FAQ</a>

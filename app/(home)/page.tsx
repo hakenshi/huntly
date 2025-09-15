@@ -7,13 +7,15 @@ import { CTA } from "@/components/cta";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+    <main className="min-h-screen">
       <Hero />
       <Features />
-      <SocialProof />
+      {/* <SocialProof /> */}
       <Pricing />
-      <FAQ />
-      <CTA />
+      <section id="faq" className="px-6 space-y-10 py-32 min-h-screen text-white">
+        <FAQ />
+        <CTA />
+      </section>
     </main>
   );
 }

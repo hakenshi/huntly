@@ -1,51 +1,63 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Target, Search, BarChart3 } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
+import { Filter, Database, BarChart3 } from "lucide-react";
 
 export function Features() {
   return (
-    <section id="features" className="px-6 py-20">
+    <section id="features" className="px-6 py-40 min-h-screen">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Como Funciona</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Tudo que você precisa para <br/> encontrar e converter leads</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Três passos simples para transformar sua geração de leads
+            Huntly combina o poder da IA com uma base de dados compreensiva para te ajudar a impulsionar suas vendas e fechar negócios.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          <Card className="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl hover:bg-white/10 transition-all hover:scale-105">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-white/20 transition-colors">
-                <Target className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-semibold mb-4 text-white">1. Defina Critérios</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Configure os parâmetros do seu cliente ideal: setor, tamanho da empresa, localização
-              </p>
+          <Card className="size-72 bg-gradient-to-tl from-gray-900/40 to-transparent border border-gray-800/40 hover:scale-105 text-white transition-transform cursor-pointer">
+            <CardContent>
+              <CardHeader className="flex justify-center mt-10 mb-5">
+                <span className="bg-orange-400/20 w-fit p-2 rounded-full">
+                  <Filter className="text-orange-400" size={32} />
+                </span>
+              </CardHeader>
+              <CardDescription>
+                <div className="text-white text-center">
+                  <p className="font-bold mb-2">Filtragem Inteligente</p>
+                  <span>Encontre leads precisos com mais de 50 filtros avançados: setor, faturamento, localização, tecnologias e sinais de crescimento.</span>
+                </div>
+              </CardDescription>
             </CardContent>
           </Card>
           
-          <Card className="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl hover:bg-white/10 transition-all hover:scale-105">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-white/20 transition-colors">
-                <Search className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-semibold mb-4 text-white">2. Discovery Automático</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Nossa IA busca e qualifica leads em tempo real baseado nos seus critérios
-              </p>
+          <Card className="size-72 bg-gradient-to-tl from-gray-900/40 to-transparent border border-gray-800/40 hover:scale-105 text-white transition-transform cursor-pointer">
+            <CardContent>
+              <CardHeader className="flex justify-center mt-10 mb-5">
+                <span className="bg-orange-400/20 w-fit p-2 rounded-full">
+                  <Database className="text-orange-400" size={32} />
+                </span>
+              </CardHeader>
+              <CardDescription>
+                <div className="text-white text-center">
+                  <p className="font-bold mb-2">Base de Dados Atualizada</p>
+                  <span>Acesse milhões de contatos verificados e informações atualizadas de empresas em tempo real para máxima precisão.</span>
+                </div>
+              </CardDescription>
             </CardContent>
           </Card>
           
-          <Card className="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl hover:bg-white/10 transition-all hover:scale-105">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-white/20 transition-colors">
-                <BarChart3 className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-semibold mb-4 text-white">3. Receba Leads Qualificados</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Leads com score de qualidade direto no seu CRM ou dashboard
-              </p>
+          <Card className="size-72 bg-gradient-to-tl from-gray-900/40 to-transparent border border-gray-800/40 hover:scale-105 text-white transition-transform cursor-pointer">
+            <CardContent>
+              <CardHeader className="flex justify-center mt-10 mb-5">
+                <span className="bg-orange-400/20 w-fit p-2 rounded-full">
+                  <BarChart3 className="text-orange-400" size={32} />
+                </span>
+              </CardHeader>
+              <CardDescription>
+                <div className="text-white text-center">
+                  <p className="font-bold mb-2">Analytics Inteligente</p>
+                  <span>Dashboard completo com métricas de performance, qualidade de leads e taxas de conversão para otimizar seus resultados.</span>
+                </div>
+              </CardDescription>
             </CardContent>
           </Card>
         </div>
