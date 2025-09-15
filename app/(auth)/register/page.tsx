@@ -3,22 +3,25 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { registerSchama, RegisterSchema } from "@/lib/zod/auth";
-import { Label } from "@radix-ui/react-dropdown-menu";
+import { registerSchema, RegisterSchema } from "@/lib/zod/auth";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-import {zodResolver} from "@hookform/resolvers/zod"
+import { zodResolver } from "@hookform/resolvers/zod";
 
-export default function ResgisterPage() {
-
+export default function RegisterPage() {
     const form = useForm<RegisterSchema>({
-        resolver: zodResolver(registerSchama),
+        resolver: zodResolver(registerSchema),
         defaultValues: {
             email: '',
             password: '',
             confirmPassword: ''
         }
     })
+
+    const onSubmit = (values: RegisterSchema) => {
+        console.log(values)
+    }
 
     return (
         <div className="min-h-screen bg-gradient-to-br bg-zinc-950/50 flex items-center justify-center p-4">
@@ -40,54 +43,71 @@ export default function ResgisterPage() {
                     </CardHeader>
 
                     <CardContent className="space-y-6">
-                        <form className="space-y-6">
-                            <div className="space-y-2">
-                                <Label className="text-zinc-200 font-medium">
-                                    Email
-                                </Label>
-                                <Input
-                                    id="email"
-                                    type="email"
-                                    placeholder="seu@email.com"
-                                    className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-400 focus:border-orange-500 focus:ring-orange-500/20 h-12"
+                        <Form {...form}>
+                            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                                <FormField
+                                    control={form.control}
+                                    name="email"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel className="text-zinc-200 font-medium">Email</FormLabel>
+                                            <FormControl>
+                                                <Input
+                                                    type="email"
+                                                    placeholder="seu@email.com"
+                                                    className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-400 focus:border-orange-500 focus:ring-orange-500/20 h-12"
+                                                    {...field}
+                                                />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
                                 />
-                            </div>
-
-                            <div className="space-y-2">
-                                <Label className="text-zinc-200 font-medium">
-                                    Senha
-                                </Label>
-                                <Input
+                                <FormField
+                                    control={form.control}
                                     name="password"
-                                    type="password"
-                                    placeholder="••••••••"
-                                    className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-400 focus:border-orange-500 focus:ring-orange-500/20 h-12"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel className="text-zinc-200 font-medium">Senha</FormLabel>
+                                            <FormControl>
+                                                <Input
+                                                    type="password"
+                                                    placeholder="••••••••"
+                                                    className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-400 focus:border-orange-500 focus:ring-orange-500/20 h-12"
+                                                    {...field}
+                                                />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
                                 />
-                            </div>
-                            <div className="space-y-2">
-                                <Label className="text-zinc-200 font-medium">
-                                    Confirm sua senha
-                                </Label>
-                                <Input
-                                    name="confirm-password"
-                                    type="password"
-                                    placeholder="••••••••"
-                                    className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-400 focus:border-orange-500 focus:ring-orange-500/20 h-12"
+                                <FormField
+                                    control={form.control}
+                                    name="confirmPassword"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel className="text-zinc-200 font-medium">Confirme sua senha</FormLabel>
+                                            <FormControl>
+                                                <Input
+                                                    type="password"
+                                                    placeholder="••••••••"
+                                                    className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-400 focus:border-orange-500 focus:ring-orange-500/20 h-12"
+                                                    {...field}
+                                                />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
                                 />
-                            </div>
-                            <Button
-                                type="submit"
-                                variant={"gradient"}
-                                className="w-full"
-                            >
-                                Entrar
-                            </Button>
-                            <div className="flex justify-center">
-                                <a href="#" className="text-sm text-orange-400/80 hover:text-orange-300 transition-colors">
-                                    Esqueceu a senha?
-                                </a>
-                            </div>
-                        </form>
+                                <Button
+                                    type="submit"
+                                    variant="gradient"
+                                    className="w-full"
+                                >
+                                    Criar conta
+                                </Button>
+                            </form>
+                        </Form>
 
                         <div className="relative">
                             <div className="absolute inset-0 flex items-center">
@@ -100,7 +120,7 @@ export default function ResgisterPage() {
                         <div className="text-center">
                             <span className="text-zinc-400">Já tem uma conta? </span>
                             <Link href="/login" className="text-orange-400 hover:text-orange-300 font-medium transition-colors">
-                                Criar conta
+                                Fazer login
                             </Link>
                         </div>
                     </CardContent>
