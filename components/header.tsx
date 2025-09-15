@@ -9,11 +9,11 @@ export function Header() {
   return (
     <header className="w-[95%] px-6 py-4 bg-black/30 backdrop-blur-md mt-3 rounded-full text-white fixed left-1/2 transform -translate-x-1/2 top-0 z-50 border border-zinc-900/80">
       <nav className="flex justify-between items-center w-full">
-        <div className="text-2xl font-bold text-white">Huntly</div>
+        <Link href={"#hero"} className="text-2xl font-bold text-white hover:scale-105 transition-transform">Huntly</Link>
         <div className="md:flex hidden space-x-8">
-          <a href="#features" className="hover:text-gray-300 text-white transition-colors font-medium">Recursos</a>
-          <a href="#pricing" className="hover:text-gray-300 text-white transition-colors font-medium">Preços</a>
-          <a href="#faq" className="hover:text-gray-300 text-white transition-colors font-medium">FAQ</a>
+          <Link href="#features" className="text-white transition-all font-medium hover:scale-105">Recursos</Link>
+          <Link href="#pricing" className="text-white transition-all font-medium hover:scale-105">Preços</Link>
+          <Link href="#faq" className="text-white transition-all font-medium hover:scale-105">FAQ</Link>
         </div>
 
         <div className="hidden md:flex items-center space-x-4">

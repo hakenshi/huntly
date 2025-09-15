@@ -5,7 +5,7 @@ import { Badge } from "./ui/badge";
 
 export function Hero() {
   return (
-    <section className="px-6 py-32 pt-30 min-h-screen flex items-center justify-center">
+    <section id="hero" className="px-6 py-32 pt-30 min-h-screen flex items-center justify-center">
       <div className="max-w-6xl mx-auto text-center">
         <Badge className="bg-primary/50 border border-primary font-bold py-1 px-2 mb-5" >
             <Zap className="mr-2 h-4 w-4" />
