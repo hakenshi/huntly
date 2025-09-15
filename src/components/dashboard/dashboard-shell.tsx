@@ -13,10 +13,12 @@ export default function DashboardShell({ children, pageName }: Props) {
                 <h2 className="text-2xl font-bold">{pageName}</h2>
                 <nav className="flex items-center gap-2">
                     <Button variant={"ghost"}>
-                        <DownloadIcon /> Exportar
+                        <DownloadIcon /> 
+                        <span className="md:inline hidden">Exportar</span>
                     </Button>
                     <Button>
-                        <PlusIcon /> Nova Busca
+                        <PlusIcon /> 
+                        <span className="md:inline hidden">Nova Busca</span>
                     </Button>
                 </nav>
             </header>

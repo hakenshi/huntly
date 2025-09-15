@@ -39,8 +39,8 @@ const navigation = [
 
 export default function UserLayout({children}:PropsWithChildren) {
   return (
-    <div className="grid grid-cols-[0.12fr_1fr] min-h-screen bg-gradient-to-tl ">
-        <aside className="border-r border-r-gray-800/80 grid grid-rows-[0.1fr_0.8fr_0.1fr]">
+    <div className="grid md:grid-cols-[0.12fr_1fr] min-h-screen bg-gradient-to-tl ">
+        <aside className="hidden border-r border-r-gray-800/80 md:grid md:grid-rows-[0.1fr_0.8fr_0.1fr]">
             <div className="border-b border-b-gray-800/80 flex items-center justify-center">
                 <HuntlyLogo href="" />
             </div>
