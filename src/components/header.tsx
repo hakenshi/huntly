@@ -3,13 +3,17 @@
 import { Button } from "@/src/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/src/components/ui/sheet";
 import { Menu } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export function Header() {
   return (
     <header className="w-[95%] px-6 py-4 bg-black/30 backdrop-blur-md mt-3 rounded-full text-white fixed left-1/2 transform -translate-x-1/2 top-0 z-50 border border-zinc-900/80">
       <nav className="flex justify-between items-center w-full">
-        <Link href={"#hero"} className="text-2xl font-bold text-white hover:scale-105 transition-transform">Huntly</Link>
+        <Link href={"#hero"} className="text-2xl font-bold text-white hover:scale-105 transition-transform inline-flex items-center gap-2">
+          <Image width={1000} height={1000} src={"/huntly-2.png"} alt="huntly logo" className="size-10" />
+          <p>Huntly</p>
+        </Link>
         <div className="md:flex hidden space-x-8">
           <Link href="#features" className="text-white transition-all font-medium hover:scale-105">Recursos</Link>
           <Link href="#pricing" className="text-white transition-all font-medium hover:scale-105">Preços</Link>
