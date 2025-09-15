@@ -10,10 +10,10 @@ export default function LoginPage() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(249,115,22,0.1),transparent_50%)]" /> */}
 
             <div className="relative w-full max-w-md">
-                <div className="text-center mb-8">
+                {/* <div className="text-center mb-8">
                     <h1 className="text-3xl font-bold text-white mb-2">Huntly</h1>
                     <div className="w-12 h-1 bg-gradient-to-r from-orange-500 to-orange-500 mx-auto rounded-full" />
-                </div>
+                </div> */}
 
                 <Card className="border-zinc-800 bg-zinc-900/50 backdrop-blur-sm shadow-2xl">
                     <CardHeader className="text-center space-y-2">
@@ -24,7 +24,7 @@ export default function LoginPage() {
                     </CardHeader>
 
                     <CardContent className="space-y-6">
-                        <form className="space-y-4">
+                        <form className="space-y-6">
                             <div className="space-y-2">
                                 <Label className="text-zinc-200 font-medium">
                                     Email
@@ -48,13 +48,6 @@ export default function LoginPage() {
                                     className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-400 focus:border-orange-500 focus:ring-orange-500/20 h-12"
                                 />
                             </div>
-
-                            <div className="flex justify-end">
-                                <a href="#" className="text-sm text-orange-400 hover:text-orange-300 transition-colors">
-                                    Esqueceu a senha?
-                                </a>
-                            </div>
-
                             <Button
                                 type="submit"
                                 variant={"gradient"}
@@ -62,6 +55,11 @@ export default function LoginPage() {
                             >
                                 Entrar
                             </Button>
+                            <div className="flex justify-center">
+                                <a href="#" className="text-sm text-orange-400/80 hover:text-orange-300 transition-colors">
+                                    Esqueceu a senha?
+                                </a>
+                            </div>
                         </form>
 
                         <div className="relative">
