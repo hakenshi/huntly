@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-dropdown-menu";
+import Link from "next/link";
 
 export default function LoginPage() {
     return (
@@ -15,7 +16,7 @@ export default function LoginPage() {
                     <div className="w-12 h-1 bg-gradient-to-r from-orange-500 to-orange-500 mx-auto rounded-full" />
                 </div> */}
 
-                <Card className="border-zinc-800 bg-zinc-900/50 backdrop-blur-sm shadow-2xl">
+                <Card className="bg-gradient-to-tl from-gray-900/40 to-transparent border border-gray-800/40">
                     <CardHeader className="text-center space-y-2">
                         <CardTitle className="text-2xl font-bold text-white">Bem-vindo!</CardTitle>
                         <CardDescription className="text-zinc-300 text-base">
@@ -73,9 +74,9 @@ export default function LoginPage() {
 
                         <div className="text-center">
                             <span className="text-zinc-400">Não tem uma conta? </span>
-                            <a href="#" className="text-orange-400 hover:text-orange-300 font-medium transition-colors">
+                            <Link href="/register" className="text-orange-400 hover:text-orange-300 font-medium transition-colors">
                                 Criar conta
-                            </a>
+                            </Link>
                         </div>
                     </CardContent>
                 </Card>

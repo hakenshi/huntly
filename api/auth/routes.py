@@ -1,51 +1,51 @@
 from fastapi import APIRouter, HTTPException, Depends
+from sqlalchemy.orm import Session
 from models import UserCreate, UserLogin, Token, User
+from database.models import User as DBUser
+from database.connection import get_db
 from auth.utils import (
-    load_users, save_users, verify_password, get_password_hash,
+    verify_password, get_password_hash,
     create_access_token, get_current_user
 )
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
-
 @router.post("/register", response_model=Token)
-def register(user: UserCreate):
-    users = load_users()
-
-    if user.email in users:
+def register(user: UserCreate, db: Session = Depends(get_db)):
+    # Verificar se email já existe
+    if db.query(DBUser).filter(DBUser.email == user.email).first():
         raise HTTPException(status_code=400, detail="Email already registered")
-
-    hashed_password = get_password_hash(user.password)
-    users[user.email] = {
-        "email": user.email,
-        "name": user.name,
-        "hashed_password": hashed_password
-    }
-    save_users(users)
-
+    
+    # Criar usuário
+    db_user = DBUser(
+        email=user.email,
+        name=user.name,
+        password_hash=get_password_hash(user.password)
+    )
+    db.add(db_user)
+    db.commit()
+    
     access_token = create_access_token(data={"sub": user.email})
     return {"access_token": access_token, "token_type": "bearer"}
-
 
 @router.post("/login", response_model=Token)
-def login(user: UserLogin):
-    users = load_users()
-
-    if user.email not in users or not verify_password(user.password, users[user.email]["hashed_password"]):
+def login(user: UserLogin, db: Session = Depends(get_db)):
+    # Buscar usuário
+    db_user = db.query(DBUser).filter(DBUser.email == user.email).first()
+    
+    if not db_user or not verify_password(user.password, db_user.password_hash):
         raise HTTPException(status_code=401, detail="Invalid credentials")
-
+    
     access_token = create_access_token(data={"sub": user.email})
     return {"access_token": access_token, "token_type": "bearer"}
 
-
 @router.get("/me", response_model=User)
-def get_me(current_user: str = Depends(get_current_user)):
-    users = load_users()
-    user_data = users.get(current_user)
-    if not user_data:
+def get_me(current_user: str = Depends(get_current_user), db: Session = Depends(get_db)):
+    db_user = db.query(DBUser).filter(DBUser.email == current_user).first()
+    if not db_user:
         raise HTTPException(status_code=404, detail="User not found")
-
+    
     return {
-        "email": user_data["email"],
-        "name": user_data["name"]
+        "email": db_user.email,
+        "name": db_user.name
     }
