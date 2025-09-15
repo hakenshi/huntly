@@ -43,9 +43,9 @@ export function Header() {
 
           {/* Desktop Nav */}
           <div className="md:flex hidden space-x-8">
-            <Link href="#features" className="transition-all font-medium hover:scale-105 hover:text-red-500">Recursos</Link>
-            <Link href="#pricing" className="transition-all font-medium hover:scale-105 hover:text-red-500">Preços</Link>
-            <Link href="#faq" className="transition-all font-medium hover:scale-105 hover:text-red-500">FAQ</Link>
+            <Link href="#features" className="transition-all font-medium hover:scale-105 hover:text-redwhite/80">Recursos</Link>
+            <Link href="#pricing" className="transition-all font-medium hover:scale-105 hover:text-white/80">Preços</Link>
+            <Link href="#faq" className="transition-all font-medium hover:scale-105 hover:text-white/80">FAQ</Link>
           </div>
 
           {/* Desktop CTA */}

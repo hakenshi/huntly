@@ -12,8 +12,8 @@ export function CTA() {
         <p className="text-xl mb-10 text-gray-300">
           Comece a encontrar leads de qualidade não em horas, mas em minutos.
         </p>
-        <Button size="lg" >
-          Começar Teste Grátis Agora
+        <Button className="text-sm" size="lg" >
+          Comece agora grátis
           <ArrowRight className="ml-2 h-6 w-6" />
         </Button>
       </Card>

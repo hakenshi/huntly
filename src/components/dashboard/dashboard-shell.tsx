@@ -22,7 +22,7 @@ export default function DashboardShell({ children, pageName }: Props) {
                     </Button>
                 </nav>
             </header>
-            <main className="p-4">
+            <main className="p-4 max-h-screen overflow-y-scroll">
                 {children}
             </main>
         </div>
