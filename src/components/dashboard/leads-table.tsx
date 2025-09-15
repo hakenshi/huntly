@@ -4,11 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/src
 import { Badge } from "@/src/components/ui/badge";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
-import { 
-  Search, 
-  Filter, 
-  Mail, 
-  Phone, 
+import {
+  Search,
+  Filter,
+  Mail,
+  Phone,
   ExternalLink,
   Star,
   Calendar,
@@ -117,6 +117,32 @@ export function LeadsTable() {
 
   return (
     <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <Card>
+          <CardContent className="p-4 text-center">
+            <div className="text-2xl font-bold text-blue-500">5</div>
+            <div className="text-sm text-white/70">Total de Leads</div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4 text-center">
+            <div className="text-2xl font-bold text-red-500">3</div>
+            <div className="text-sm text-white/70">Alta Prioridade</div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4 text-center">
+            <div className="text-2xl font-bold text-purple-500">81.4</div>
+            <div className="text-sm text-white/70">Score Médio</div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4 text-center">
+            <div className="text-2xl font-bold text-green-400">R$ 9.5M</div>
+            <div className="text-sm text-white/70">Receita Potencial</div>
+          </CardContent>
+        </Card>
+      </div>
       <Card>
         <CardHeader>
           <CardTitle>Filtros</CardTitle>
@@ -161,9 +187,9 @@ export function LeadsTable() {
                       </div>
                       <div className="flex items-center space-x-1">
                         {[...Array(5)].map((_, i) => (
-                          <Star 
-                            key={i} 
-                            className={`h-4 w-4 ${i < Math.floor(lead.score / 20) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+                          <Star
+                            key={i}
+                            className={`h-4 w-4 ${i < Math.floor(lead.score / 20) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
                           />
                         ))}
                         <span className="ml-2 text-sm font-medium text-white">{lead.score}/100</span>
@@ -221,32 +247,6 @@ export function LeadsTable() {
         </CardContent>
       </Card>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <Card>
-          <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-blue-500">5</div>
-            <div className="text-sm text-white/70">Total de Leads</div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-red-500">3</div>
-            <div className="text-sm text-white/70">Alta Prioridade</div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-purple-500">81.4</div>
-            <div className="text-sm text-white/70">Score Médio</div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-green-400">R$ 9.5M</div>
-            <div className="text-sm text-white/70">Receita Potencial</div>
-          </CardContent>
-        </Card>
-      </div>
     </div>
   );
 }

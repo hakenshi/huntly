@@ -20,7 +20,7 @@ export function BuscarLeads() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center space-x-2">
-            <Zap className="h-5 w-5 text-orange-500" />
+            <Zap className="h-5 w-5 text-purple-500" />
             <span>Busca Inteligente de Leads</span>
           </CardTitle>
           <CardDescription className="text-white/70">Configure os parâmetros para encontrar leads qualificados</CardDescription>
@@ -29,19 +29,19 @@ export function BuscarLeads() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="text-sm font-medium text-white/80 mb-2 block">Setor/Indústria</label>
-              <Input placeholder="Ex: Tecnologia, E-commerce, SaaS..." />
+              <Input placeholder="Ex: Tecnologia, E-commerce, SaaS..." className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-400" />
             </div>
             <div>
               <label className="text-sm font-medium text-white/80 mb-2 block">Localização</label>
-              <Input placeholder="Ex: São Paulo, Brasil, América Latina..." />
+              <Input placeholder="Ex: São Paulo, Brasil, América Latina..." className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-400" />
             </div>
             <div>
               <label className="text-sm font-medium text-white/80 mb-2 block">Tamanho da Empresa</label>
-              <Input placeholder="Ex: 10-50, 50-200, 200+ funcionários..." />
+              <Input placeholder="Ex: 10-50, 50-200, 200+ funcionários..." className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-400" />
             </div>
             <div>
               <label className="text-sm font-medium text-white/80 mb-2 block">Faturamento</label>
-              <Input placeholder="Ex: R$ 1-5M, R$ 5-10M, R$ 10M+..." />
+              <Input placeholder="Ex: R$ 1-5M, R$ 5-10M, R$ 10M+..." className="bg-zinc-800/50 border-zinc-700 text-white placeholder:text-zinc-400" />
             </div>
           </div>
           
@@ -57,31 +57,6 @@ export function BuscarLeads() {
           </div>
         </CardContent>
       </Card>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Card>
-          <CardContent className="p-4 text-center">
-            <Target className="h-8 w-8 text-orange-500 mx-auto mb-2" />
-            <div className="text-lg font-bold">Precisão IA</div>
-            <div className="text-sm text-white/70">Score de qualificação automático</div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-4 text-center">
-            <Building className="h-8 w-8 text-yellow-500 mx-auto mb-2" />
-            <div className="text-lg font-bold">50+ Filtros</div>
-            <div className="text-sm text-white/70">Segmentação avançada</div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-4 text-center">
-            <Users className="h-8 w-8 text-orange-400 mx-auto mb-2" />
-            <div className="text-lg font-bold">Milhões de Leads</div>
-            <div className="text-sm text-white/70">Base atualizada em tempo real</div>
-          </CardContent>
-        </Card>
-      </div>
-
       <Card>
         <CardHeader>
           <CardTitle>Buscas Recentes</CardTitle>
@@ -89,34 +64,34 @@ export function BuscarLeads() {
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            <div className="flex items-center justify-between p-3 border rounded-lg hover:bg-muted/50 transition-colors">
+            <div className="flex items-center justify-between p-3 border border-gray-800/80 rounded-lg hover:bg-gray-900/50 transition-colors">
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-orange-500/20 rounded-full flex items-center justify-center">
-                  <Building className="h-4 w-4 text-orange-400" />
+                <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
+                  <Building className="h-4 w-4 text-blue-400" />
                 </div>
                 <div>
-                  <p className="font-medium">Startups de Tecnologia - SP</p>
+                  <p className="font-medium text-white">Startups de Tecnologia - SP</p>
                   <p className="text-sm text-white/70">10-50 funcionários • R$ 1-5M faturamento</p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
-                <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/30">127 leads</Badge>
+                <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">127 leads</Badge>
                 <Button size="sm" variant="outline">Repetir</Button>
               </div>
             </div>
 
-            <div className="flex items-center justify-between p-3 border rounded-lg hover:bg-muted/50 transition-colors">
+            <div className="flex items-center justify-between p-3 border border-gray-800/80 rounded-lg hover:bg-gray-900/50 transition-colors">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center">
                   <DollarSign className="h-4 w-4 text-yellow-400" />
                 </div>
                 <div>
-                  <p className="font-medium">E-commerce - Brasil</p>
+                  <p className="font-medium text-white">E-commerce - Brasil</p>
                   <p className="text-sm text-white/70">20-100 funcionários • R$ 2-10M faturamento</p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
-                <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30">89 leads</Badge>
+                <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/30">89 leads</Badge>
                 <Button size="sm" variant="outline">Repetir</Button>
               </div>
             </div>

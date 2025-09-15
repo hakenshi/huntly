@@ -4,9 +4,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/src
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { Badge } from "@/src/components/ui/badge";
-import { 
-  User, 
-  Mail, 
+import {
+  User,
+  Mail,
   Bell,
   Shield,
   CreditCard,
@@ -19,12 +19,37 @@ import {
 export function Configuracoes() {
   return (
     <div className="space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold text-white">Configurações</h2>
-        <p className="text-white/70">Gerencie sua conta e preferências</p>
-      </div>
 
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center space-x-2">
+            <Shield className="h-5 w-5 text-green-500" />
+            <span>Segurança</span>
+          </CardTitle>
+          <CardDescription className="text-white/70">Mantenha sua conta segura</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="text-center p-4 border border-gray-800/80 rounded-lg">
+              <Shield className="h-8 w-8 text-green-500 mx-auto mb-2" />
+              <div className="font-medium text-white">2FA Ativo</div>
+              <div className="text-sm text-white/70">Autenticação em duas etapas</div>
+            </div>
+            <div className="text-center p-4 border border-gray-800/80 rounded-lg">
+              <Key className="h-8 w-8 text-yellow-500 mx-auto mb-2" />
+              <div className="font-medium text-white">Senha Forte</div>
+              <div className="text-sm text-white/70">Última alteração: 30 dias</div>
+            </div>
+            <div className="text-center p-4 border border-gray-800/80 rounded-lg">
+              <Settings className="h-8 w-8 text-purple-400 mx-auto mb-2" />
+              <div className="font-medium text-white">Sessões Ativas</div>
+              <div className="text-sm text-white/70">2 dispositivos conectados</div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
@@ -157,34 +182,6 @@ export function Configuracoes() {
         </Card>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center space-x-2">
-            <Shield className="h-5 w-5 text-green-500" />
-            <span>Segurança</span>
-          </CardTitle>
-          <CardDescription className="text-white/70">Mantenha sua conta segura</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="text-center p-4 border border-gray-800/80 rounded-lg">
-              <Shield className="h-8 w-8 text-green-500 mx-auto mb-2" />
-              <div className="font-medium text-white">2FA Ativo</div>
-              <div className="text-sm text-white/70">Autenticação em duas etapas</div>
-            </div>
-            <div className="text-center p-4 border border-gray-800/80 rounded-lg">
-              <Key className="h-8 w-8 text-yellow-500 mx-auto mb-2" />
-              <div className="font-medium text-white">Senha Forte</div>
-              <div className="text-sm text-white/70">Última alteração: 30 dias</div>
-            </div>
-            <div className="text-center p-4 border border-gray-800/80 rounded-lg">
-              <Settings className="h-8 w-8 text-purple-400 mx-auto mb-2" />
-              <div className="font-medium text-white">Sessões Ativas</div>
-              <div className="text-sm text-white/70">2 dispositivos conectados</div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }
